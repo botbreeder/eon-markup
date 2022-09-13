@@ -2,7 +2,7 @@
 
 _A markup language for the space dudes from the XXIVth century_
 
-_yeah_
+_Are we running in circles? yeah_
 
 ![Preview](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x00.png)
 
