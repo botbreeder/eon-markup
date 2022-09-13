@@ -77,7 +77,7 @@ You shouldn't, but if you do, you're getting a nobrain tool of great capabilitie
 
 ## Superset
 
-Eon-Markup accepts a superset of JSON. Strings can be delimited by double quotes, as usual, or they can be identifiers.
+Eon-Markup accepts a superset of JSON. Strings can be delimited by double quotes, as usual, or they can be identifiers (without double quotes).
 
 The syntax of an identifier is: `[a-zA-Z_][0-9a-zA-Z_]*`
 
