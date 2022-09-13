@@ -1,2 +1,8 @@
-# eon-markup
-A markup language that uses JSON as tags
+# EON-Markup
+
+_A markup language for the XXIVth century_
+
+_yeah_
+
+## Preview
+
