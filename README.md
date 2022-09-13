@@ -1,6 +1,6 @@
 # EON-Markup
 
-_A markup language for the XXIVth century_
+_A markup language for the space dudes from the XXIVth century_
 
 _yeah dude_
 
@@ -42,3 +42,18 @@ And here is the JSON representation of this example.
 ]
 
 ```
+
+The same could be written like this:
+
+```
+this is a [tagged]Hello World[/] example
+```
+
+... or like this:
+
+
+```
+this is a ["tagged"]Hello World[/] example
+```
+
+... where the opening tag is a legal JSON array.
