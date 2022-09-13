@@ -60,7 +60,7 @@ this is a ["tagged"]Hello World[/] example
 
 ## Overview
 
-Like XML, EON-Markup is a markup language that can be used to create annotates and structured documents.
+Like XML, EON-Markup is a markup language that can be used to create annotated and structured documents.
 
 The opening tags of an XML element can contain attributes, which are key-value pairs.
 
