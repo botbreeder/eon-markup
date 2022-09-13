@@ -2,7 +2,7 @@
 
 _A markup language for the space dudes from the XXIVth century_
 
-_yeah dude_
+_yeah_
 
 ![Preview](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x00.png)
 
@@ -61,3 +61,7 @@ this is a ["tagged"]Hello World[/] example
 ## Overview
 
 Like XML, EON-Markup is a markup language that can be used to create annotates and structured documents.
+
+The opening tags of an XML element can contain attributes, which are key-value pairs.
+
+Now the opening tags of an Eon element can be an JSON array or a JSON object.
