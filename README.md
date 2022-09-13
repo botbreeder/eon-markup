@@ -67,5 +67,10 @@ Like XML, EON-Markup is a markup language that can be used to create annotated a
 - The opening tags of an XML element can contain attributes, which are key-value pairs.
 - The opening tags of an EON element can be JSON arrays or JSON objects.
 - XML has a clear spec, a jumanjiesque ecosystem, a Wikipedia article and XSLT.
-- EON-Markup is a tiny shithack in a dark corner of github. With cool banners.
+- EON-Markup is a tiny shithack in a dark corner of github. With cool banners though.
 
+Why should I care?
+
+You shouldn't, but if you do, you're getting a nobrain tool of great capabilities. An EON-M document can be as simple as a straight JSON object, or as complex as a human thought and still easy on the eye. Instead of simple key-value pairs, you have the full power of JSON directly in your document tags.
+
+Eon-Markup accepts a superset of JSON. Strings can be delimited by double quotes, as usual, or they can be identifiers: `[a-zA-Z_][0-9a-zA-Z_]*`
