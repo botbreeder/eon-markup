@@ -62,7 +62,10 @@ this is a ["tagged"]Hello World[/] example
 
 ## Overview
 
-Like XML, EON-Markup is a markup language that can be used to create annotated and structured documents. The difference is:
+Like XML, EON-Markup is a markup language that can be used to create annotated and structured documents. The differences are:
 
 - The opening tags of an XML element can contain attributes, which are key-value pairs.
 - The opening tags of an EON element can be JSON arrays or JSON objects.
+- XML has a clear spec, a jumanjiesque ecosystem, and XSLT.
+- EON-Markup is a tiny shithack in a dark corner of github.
+
