@@ -80,7 +80,7 @@ You shouldn't, but if you do, you're getting a nobrain tool of great capabilitie
 EON-Markup accepts a superset of JSON: Strings can be delimited by double quotes, as usual, or they can be identifiers.
 
 - An identifier is not between double quotes.
-- An identifier can contain letters, digits and underscores.
+- An identifier can only contain letters, digits and underscores.
 - An identifier cannot begin with a digit.
 
 The syntax of an identifier is: `[a-zA-Z_][0-9a-zA-Z_]*`
