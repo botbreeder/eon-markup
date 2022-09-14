@@ -124,6 +124,22 @@ Same goes for object tags. For a tag like `{foo:mew}`, the closing tag is `{/id}
 
 The 5th example above shows that you can really use _any_ identifier. Again, you're in charge, don't make poor choices.
 
+![Usage](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x11.png)
+
+## Usage
+
+![NAQ](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x12.png)
+
+## NAQ
+
+**What are NAQ?**
+
+NAQ are Never Asked Questions.
+
+**Why's this question unanswered?**
+
+
+
 
 
 
