@@ -82,7 +82,8 @@ EON-Markup accepts a superset of JSON: Strings can be delimited by double quotes
 - An identifier is not between double quotes.
 - An identifier can contain letters, digits and underscores.
 - An identifier cannot begin with a digit.
-- The syntax of an identifier is: `[a-zA-Z_][0-9a-zA-Z_]*`
+
+The syntax of an identifier is: `[a-zA-Z_][0-9a-zA-Z_]*`
 
 An identifier is always converted to a regular string. You can use identifiers as keys and as values, which means the following document is legal.
 
