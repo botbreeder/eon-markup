@@ -14,7 +14,7 @@ EON-Markup is a markup language you can use to annotate text with data. Here is 
 this is a [tagged]Hello World[/tagged] example
 ```
 
-And here is the JSON representation of this example, as returned by the official parser.
+And here is the JSON representation of this example, as returned by the reference parser.
 
 ```JSON
 
