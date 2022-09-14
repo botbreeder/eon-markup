@@ -1,6 +1,6 @@
 # EON-Markup
 
-_A markup language for the space things from the XXIVth century_
+_A markup language for the space monkeys from the XXIVth century_
 
 _Are we running in circles? yeah_
 
