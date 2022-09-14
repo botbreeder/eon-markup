@@ -77,12 +77,53 @@ You shouldn't, but if you do, you're getting a nobrain tool of great capabilitie
 
 ## Superset
 
-Eon-Markup accepts a superset of JSON. Strings can be delimited by double quotes, as usual, or they can be identifiers (without double quotes).
+Eon-Markup accepts a superset of JSON: Strings can be delimited by double quotes, as usual, or they can be identifiers.
 
-The syntax of an identifier is: `[a-zA-Z_][0-9a-zA-Z_]*`
+- An identifier is not between double quotes.
+- An identifier can contain letters, digits and underscores.
+- An identifier cannot begin with a digit.
+- The syntax of an identifier is: `[a-zA-Z_][0-9a-zA-Z_]*`
 
 An identifier is always converted to a regular string. You can use identifiers as keys and as values, which means the following document is legal.
 
 ```
 some {size:big}text{/size} identifier example
 ```
+
+![Closing](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x10.png)
+
+## Closing
+
+EON-Markup is not strict on the content of closing tags.
+
+### Arrays
+
+For an array tag, like `[foo]`, the closing tag is `[/id]` where `id` can be any identifier or nothing. There's a forward slash immediately after the opening bracket of the closing tag. The examples below are legal.
+
+```
+[foo] example [/foo]
+[foo] example [/f]
+[foo] example [/]
+[foo] example [/bar]
+```
+
+The 4th example above is as legal as the others. It shows that you can really use _any_ identifier. You're in charge, so don't make poor choices.
+
+### Objects
+
+Same goes For object tags. For a tag like `{foo:mew}`, the closing tag is `{/id}` where `id` can be any identifier or nothing. There's a forward slash immediately after the opening brace of the closing tag. The examples below are legal.
+
+```
+{foo:mew} example {/foo}
+{foo:mew} example {/f}
+{foo:mew} example {/}
+{foo:mew} example {/mew}
+{foo:mew} example {/bar}
+```
+
+The 5th example above is as legal as the others. It shows that you can really use _any_ identifier. You're in charge, so don't make poor choices.
+
+
+
+
+
