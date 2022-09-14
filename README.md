@@ -111,7 +111,7 @@ The 4th example above is as legal as the others. It shows that you can really us
 
 ### Objects
 
-Same goes For object tags. For a tag like `{foo:mew}`, the closing tag is `{/id}` where `id` can be any identifier or nothing. There's a forward slash immediately after the opening brace of the closing tag. The examples below are legal.
+Same goes for object tags. For a tag like `{foo:mew}`, the closing tag is `{/id}` where `id` can be any identifier or nothing. There's a forward slash immediately after the opening brace of the closing tag. The examples below are legal.
 
 ```
 {foo:mew} example {/foo}
@@ -121,7 +121,7 @@ Same goes For object tags. For a tag like `{foo:mew}`, the closing tag is `{/id}
 {foo:mew} example {/bar}
 ```
 
-The 5th example above is as legal as the others. It shows that you can really use _any_ identifier. You're in charge, so don't make poor choices.
+The 5th example above is as legal as the others. It shows that you can really use _any_ identifier. Again, you're in charge, don't make poor choices.
 
 
 
