@@ -1030,6 +1030,43 @@ module.exports = /*
       return s0;
     }
 
+    function peg$parsevalue_separator_ornot() {
+      var s0, s1, s2, s3;
+
+      s0 = peg$currPos;
+      s1 = peg$parsews();
+      if (s1 !== peg$FAILED) {
+        if (input.charCodeAt(peg$currPos) === 44) {
+          s2 = peg$c35;
+          peg$currPos++;
+        } else {
+          s2 = peg$FAILED;
+          if (peg$silentFails === 0) { peg$fail(peg$c36); }
+        }
+        if (s2 === peg$FAILED) {
+          s2 = null;
+        }
+        if (s2 !== peg$FAILED) {
+          s3 = peg$parsews();
+          if (s3 !== peg$FAILED) {
+            s1 = [s1, s2, s3];
+            s0 = s1;
+          } else {
+            peg$currPos = s0;
+            s0 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s0;
+          s0 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s0;
+        s0 = peg$FAILED;
+      }
+
+      return s0;
+    }
+
     function peg$parsews() {
       var s0, s1;
 
@@ -1351,7 +1388,7 @@ module.exports = /*
         if (s3 !== peg$FAILED) {
           s4 = [];
           s5 = peg$currPos;
-          s6 = peg$parsevalue_separator();
+          s6 = peg$parsevalue_separator_ornot();
           if (s6 !== peg$FAILED) {
             s7 = peg$parsevalue();
             if (s7 !== peg$FAILED) {
@@ -1369,7 +1406,7 @@ module.exports = /*
           while (s5 !== peg$FAILED) {
             s4.push(s5);
             s5 = peg$currPos;
-            s6 = peg$parsevalue_separator();
+            s6 = peg$parsevalue_separator_ornot();
             if (s6 !== peg$FAILED) {
               s7 = peg$parsevalue();
               if (s7 !== peg$FAILED) {
@@ -1433,7 +1470,7 @@ module.exports = /*
         if (s3 !== peg$FAILED) {
           s4 = [];
           s5 = peg$currPos;
-          s6 = peg$parsevalue_separator();
+          s6 = peg$parsevalue_separator_ornot();
           if (s6 !== peg$FAILED) {
             s7 = peg$parsevalue();
             if (s7 !== peg$FAILED) {
@@ -1451,7 +1488,7 @@ module.exports = /*
           while (s5 !== peg$FAILED) {
             s4.push(s5);
             s5 = peg$currPos;
-            s6 = peg$parsevalue_separator();
+            s6 = peg$parsevalue_separator_ornot();
             if (s6 !== peg$FAILED) {
               s7 = peg$parsevalue();
               if (s7 !== peg$FAILED) {
