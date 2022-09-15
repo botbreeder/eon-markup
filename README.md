@@ -56,7 +56,7 @@ this is a [tagged]Hello World[/] example
 this is a ["tagged"]Hello World[/] example
 ```
 
-... where the opening tag is a legal JSON array.
+In this version, the opening tag is a legal JSON array.
 
 ![Overview](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x01.png)
 
@@ -65,7 +65,7 @@ this is a ["tagged"]Hello World[/] example
 Like XML, EON-Markup is a markup language that can be used to create annotated and structured documents. The differences are:
 
 - The opening tags of XML elements can contain attributes, which are key-value pairs.
-- The opening tags of EON elements can be JSON arrays or JSON objects.
+- The opening tags of EON elements can be **JSON arrays** or **JSON objects**.
 - XML has a clear spec, a jumanjiesque ecosystem, a Wikipedia article and XSLT.
 - EON-Markup is a tiny shithack in a dark corner of github. With cool banners though.
 
