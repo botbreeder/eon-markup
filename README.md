@@ -128,6 +128,8 @@ The 5th example above shows that you can really use _any_ identifier. Again, you
 
 ## Usage
 
+### Browser
+
 ```HTML
 <!DOCTYPE html>
 <html>
@@ -159,6 +161,10 @@ The 5th example above shows that you can really use _any_ identifier. Again, you
 
 </html>
 ```
+
+### PEGjs
+
+You can generate the parser yourself, using the syntax in [PEGjs-syntax.txt](https://github.com/botbreeder/eon-markup/blob/main/PEGjs-syntax.txt) on the [Online version of PEGjs](https://pegjs.org/online).
 
 ![NAQ](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x12.png)
 
