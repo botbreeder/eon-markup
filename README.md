@@ -84,10 +84,9 @@ EON-Markup accepts a superset of JSON.
 Strings can be delimited by double quotes, as usual, or they can be identifiers.
 
 - An identifier is not between double quotes.
-- An identifier can only contain letters, digits and underscores.
 - An identifier cannot begin with a digit.
-
-The syntax of an identifier is: `[a-zA-Z_][0-9a-zA-Z_]*`
+- An identifier cannot contain whitespaces.
+- An identifier can contain anything but `[ ] { } : , " / \` 
 
 An identifier is always converted to a regular string. You can use identifiers as keys and as values, which means the following document is legal.
 
@@ -102,9 +101,9 @@ some {size:big}text{/size} identifier example
 While commas are still mandatory in objects, they can be omitted in arrays.
 
 ```
-[1 2 3 foo] ok [/list]
+[1 2 3 foo] ok [/]
 
-[1, 2, 3, "foo"] ok [/list]
+[1, 2, 3, "foo"] ok [/]
 ```
 
 Those 2 lines above denote the exact same thing: an array of 4 items, 3 numbers and a string.
@@ -141,6 +140,10 @@ Same goes for object tags. For a tag like `{foo:mew}`, the closing tag is `{/id}
 The 5th example above shows that you can really use _any_ identifier. Again, you're in charge, don't make poor choices.
 
 ![Usage](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x11.png)
+
+### Void
+
+Void elements are elements without content. `[empty/]` is syntactic sugar for `[empty][/]`.
 
 ## Usage
 
