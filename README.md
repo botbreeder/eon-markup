@@ -172,11 +172,21 @@ You can use [eon-parser.js](https://github.com/botbreeder/eon-markup/blob/main/e
 
 ## NAQ
 
-**What are NAQ?**
+### What are NAQ?
 
 NAQ are Never Asked Questions.
 
-**Why's this question unanswered?**
+### How do I escape braces and brackets?
+
+You can use a backslash `\` to escape any character, like `{`, `[`, or `\`.
+
+| Escape sequence | Result |
+|-----------------|--------|
+| \\{              | {      |
+| \\[              | [      |
+| \\\\              | \      |
+
+### Why's this question unanswered?
 
 
 
