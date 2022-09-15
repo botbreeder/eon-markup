@@ -77,7 +77,11 @@ You shouldn't, but if you do, you're getting a nobrain tool of great capabilitie
 
 ## Superset
 
-EON-Markup accepts a superset of JSON: Strings can be delimited by double quotes, as usual, or they can be identifiers.
+EON-Markup accepts a superset of JSON.
+
+### Identifiers
+
+Strings can be delimited by double quotes, as usual, or they can be identifiers.
 
 - An identifier is not between double quotes.
 - An identifier can only contain letters, digits and underscores.
@@ -92,6 +96,18 @@ some {size:big}text{/size} identifier example
 ```
 
 ![Closing](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x10.png)
+
+### Lists
+
+While commas are still mandatory in objects, they can be omitted in arrays.
+
+```
+[1 2 3 foo] ok [/list]
+
+[1, 2, 3, "foo"] ok [/list]
+```
+
+Those 2 lines above denote the exact same thing: an array of 4 items, 3 numbers and a string.
 
 ## Closing
 
