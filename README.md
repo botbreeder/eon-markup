@@ -153,7 +153,7 @@ You can generate the parser yourself, using the syntax in [PEGjs-syntax.txt](htt
 
 ### Nodejs
 
-You can use [eon-parser-module.js](https://github.com/botbreeder/eon-markup/blob/main/eon-parser-module.js) which exports the parser.
+You can require [eon-parser-module.js](https://github.com/botbreeder/eon-markup/blob/main/eon-parser-module.js) which exports the parser.
 
 ### Browser
 
