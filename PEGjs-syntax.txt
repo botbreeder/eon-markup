@@ -55,7 +55,7 @@ ArrayClosingTag
 
 
 Identifier
-= first:[a-zA-Z_] rest:[0-9a-zA-Z]* { return first + rest.join(''); }
+= first:[^0-9 \[\{\]\}\:\,\"\/\t\r\n\\] rest:[^ \[\{\]\}\:\,\"\/\t\r\n\\]* { return first + rest.join(''); }
 
 
 
