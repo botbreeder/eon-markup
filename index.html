@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Eon-Markup</title>
+    <style>
+        body {
+            font-family: monospace;
+            white-space: pre;
+            color: white;
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+<script src="eon-parser.js"></script>
+<script>
+    document.write(
+        JSON.stringify(
+            EONParser.parse(`[2,3,4]come on[/] babe`),
+            null,
+            4
+        )
+    );
+</script>
+</body>
+
+</html>
