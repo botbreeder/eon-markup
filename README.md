@@ -99,7 +99,7 @@ EON-Markup is not strict on the content of closing tags.
 
 ### Arrays
 
-For an array tag, like `[foo]`, the closing tag is `[/id]` where `id` can be any identifier or nothing. There's a forward slash immediately after the opening bracket of the closing tag. The examples below are legal.
+For an array tag, like `[foo]`, the closing tag is `[/id]` where `id` can be any identifier or nothing. There's a forward slash immediately following the opening bracket of the closing tag. The examples below are legal.
 
 ```
 [foo] example [/foo]
@@ -112,7 +112,7 @@ The 4th example above is as legal as the others. It shows that you can really us
 
 ### Objects
 
-Same goes for object tags. For a tag like `{foo:mew}`, the closing tag is `{/id}` where `id` can be any identifier or nothing. There's a forward slash immediately after the opening brace of the closing tag. These examples are legal.
+Same goes for object tags. For a tag like `{foo:mew}`, the closing tag is `{/id}` where `id` can be any identifier or nothing. There's a slash just after the opening brace of the closing tag. These examples are legal.
 
 ```
 {foo:mew} example {/foo}
