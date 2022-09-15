@@ -106,11 +106,11 @@ While commas are still mandatory in objects, they can be omitted in arrays.
 [1, 2, 3, "foo"] ok [/]
 ```
 
-Those 2 lines above denote the exact same thing: an array of 4 items, 3 numbers and a string.
+Those 2 lines above are the exact same thing: an array of 4 items, 3 numbers and 1 string.
 
 ## Closing
 
-EON-Markup is not strict on the content of closing tags.
+EON-Markup is not strict on the shape of closing tags.
 
 ### Arrays
 
