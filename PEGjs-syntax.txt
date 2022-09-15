@@ -82,14 +82,15 @@ Identifier
 JSON_text
   = ws value:value ws { return value; }
 
-begin_array          = ws "[" ws
-begin_object         = ws "{" ws
-end_array            = ws "]" ws
-end_object           = ws "}" ws
-end_array_autoclose  = ws "/]" ws
-end_object_autoclose = ws "/}" ws
-name_separator       = ws ":" ws
-value_separator      = ws "," ws
+begin_array           = ws "[" ws
+begin_object          = ws "{" ws
+end_array             = ws "]" ws
+end_object            = ws "}" ws
+end_array_autoclose   = ws "/]" ws
+end_object_autoclose  = ws "/}" ws
+name_separator        = ws ":" ws
+value_separator       = ws "," ws
+value_separator_ornot = ws ","? ws
 
 ws "whitespace" = [ \t\n\r]*
 
@@ -157,7 +158,7 @@ array
   = begin_array
     values:(
       head:value
-      tail:(value_separator v:value { return v; })*
+      tail:(value_separator_ornot v:value { return v; })*
       { return [head].concat(tail); }
     )?
     end_array
@@ -167,7 +168,7 @@ array_autoclose
   = begin_array
     values:(
       head:value
-      tail:(value_separator v:value { return v; })*
+      tail:(value_separator_ornot v:value { return v; })*
       { return [head].concat(tail); }
     )?
     end_array_autoclose
@@ -243,4 +244,3 @@ unescaped
 // See RFC 4234, Appendix B (http://tools.ietf.org/html/rfc4234).
 DIGIT  = [0-9]
 HEXDIG = [0-9a-f]i
-
