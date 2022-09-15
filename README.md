@@ -180,7 +180,7 @@ You can use [eon-parser.js](https://github.com/botbreeder/eon-markup/blob/main/e
 <script>
     document.write(
         JSON.stringify(
-            EONParser.parse(`[2,3,4]come on[/] babe`),
+            EONParser.parse(`[+ 2 3 4]come on[/] babe`),
             null,
             4
         )
