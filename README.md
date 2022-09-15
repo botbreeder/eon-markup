@@ -132,6 +132,10 @@ The 5th example above shows that you can really use _any_ identifier. Again, you
 
 You can generate the parser yourself, using the syntax in [PEGjs-syntax.txt](https://github.com/botbreeder/eon-markup/blob/main/PEGjs-syntax.txt) on the [Online version of PEGjs](https://pegjs.org/online).
 
+### Nodejs
+
+You can use [eon-parser-module.js](https://github.com/botbreeder/eon-markup/blob/main/eon-parser-module.js) which exports the parser.
+
 ### Browser
 
 You can use [eon-parser.js](https://github.com/botbreeder/eon-markup/blob/main/eon-parser.js) which exposes a `EONParser` object, or [eon-parser-module.js](https://github.com/botbreeder/eon-markup/blob/main/eon-parser-module.js) which exports the parser.
@@ -167,10 +171,6 @@ You can use [eon-parser.js](https://github.com/botbreeder/eon-markup/blob/main/e
 
 </html>
 ```
-
-### Nodejs
-
-You can use [eon-parser-module.js](https://github.com/botbreeder/eon-markup/blob/main/eon-parser-module.js) which exports the parser.
 
 ![NAQ](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x12.png)
 
