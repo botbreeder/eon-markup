@@ -128,6 +128,38 @@ The 5th example above shows that you can really use _any_ identifier. Again, you
 
 ## Usage
 
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EON-Markup</title>
+    <style>
+        body {
+            font-family: monospace;
+            white-space: pre;
+            color: white;
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+<script src="eon-parser.js"></script>
+<script>
+    document.write(
+        JSON.stringify(
+            EONParser.parse(`[2,3,4]come on[/] babe`),
+            null,
+            4
+        )
+    );
+</script>
+</body>
+
+</html>
+```
+
 ![NAQ](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x12.png)
 
 ## NAQ
