@@ -94,8 +94,6 @@ An identifier is always converted to a regular string. You can use identifiers a
 some {size:big}text{/size} identifier example
 ```
 
-![Closing](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x10.png)
-
 ### Lists
 
 While commas are still mandatory in objects, they can be omitted in arrays.
@@ -107,6 +105,8 @@ While commas are still mandatory in objects, they can be omitted in arrays.
 ```
 
 Those 2 lines above are the exact same thing: an array of 4 items, 3 numbers and 1 string.
+
+![Closing](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x10.png)
 
 ## Closing
 
