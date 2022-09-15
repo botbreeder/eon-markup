@@ -168,6 +168,10 @@ You can use [eon-parser.js](https://github.com/botbreeder/eon-markup/blob/main/e
 </html>
 ```
 
+### Nodejs
+
+You can use [eon-parser-module.js](https://github.com/botbreeder/eon-markup/blob/main/eon-parser-module.js) which exports the parser.
+
 ![NAQ](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x12.png)
 
 ## NAQ
