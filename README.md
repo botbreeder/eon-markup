@@ -105,12 +105,12 @@ some {size:big}text{/size} identifier example
 While commas are still mandatory in objects, they can be omitted in arrays.
 
 ```
-[1 2 3 foo] ok [/]
+[1 2 3D foo] ok [/]
 
-[1, 2, 3, "foo"] ok [/]
+[1, 2, "3D", "foo"] ok [/]
 ```
 
-Those 2 lines above are the exact same thing: an array of 4 items, 3 numbers and 1 string.
+Those 2 lines above are the exact same thing: an array of 4 items, 2 numbers and 2 strings.
 
 ![Closing](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x10.png)
 
