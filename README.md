@@ -6,7 +6,7 @@ _Are we running in circles? yeah_
 
 ![Preview](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x00.png)
 
-## Preview
+## PREVIEW
 
 EON-Markup is a markup language you can use to annotate text with data. Here is how it looks like.
 
@@ -60,7 +60,7 @@ In this version, the opening tag is a legal JSON array.
 
 ![Overview](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x01.png)
 
-## Overview
+## OVERVIEW
 
 Like XML, EON-Markup is a markup language that can be used to create annotated and structured documents. The differences are:
 
@@ -79,7 +79,7 @@ Its initial purpose is to be a _lingua franca_ for chatbots' inter-organ communi
 
 ![Overview](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x02.png)
 
-## Superset
+## SUPERSET
 
 EON-Markup accepts a superset of JSON.
 
@@ -114,7 +114,7 @@ Those 2 lines above are the very same thing: an element with an array of 4 items
 
 ![Closing](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x10.png)
 
-## Closing
+## CLOSING
 
 EON-Markup is not strict on the shape of closing tags.
 
@@ -156,7 +156,7 @@ Void elements are elements without content.
 
 ![Usage](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x11.png)
 
-## Usage
+## USAGE
 
 ### PEGjs
 
