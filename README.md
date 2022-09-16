@@ -147,7 +147,7 @@ The 5th example above shows that you can really use _any_ identifier. Again, you
 
 ### Void
 
-Void elements are elements without content. `[empty/]` is syntactic sugar for `[empty][/]`. Void elements need an identifier.
+Void elements are elements without content. `[empty/]` is syntactic sugar for `[empty][/]`. Void elements need an identifier. `[/]` will never be interpreted as a void element, it is always interpreted as a closing tag.
 
 ![Usage](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x11.png)
 
