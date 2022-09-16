@@ -147,7 +147,7 @@ The 5th example above shows that you can really use _any_ identifier. Again, you
 
 ### Void
 
-Void elements are elements without content. `[empty/]` is syntactic sugar for `[empty][/]`.
+Void elements are elements without content. `[empty/]` is syntactic sugar for `[empty][/]`. Void elements need an identifier.
 
 ![Usage](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x11.png)
 
@@ -217,8 +217,15 @@ You can use a backslash `\` to escape any character, like `{`, `[`, or `\`.
 
 ### _Why's this question unanswered?_
 
+```
 
 
+
+```
+
+# ⚠️ Warning
+
+**May contain traces of syntactic sugar.**
 
 
 
