@@ -75,7 +75,7 @@ You shouldn't, but if you do, you're getting a nobrain tool of great capabilitie
 
 **What's the use case?**
 
-Its initial purpose is to be a _lingua franca_ for chatbots' inter-organ communication. But I believe you can do a lot of powerful things with this baby like, processing grocery lists and, stuff. You know, it's Turing-responsive™ and all so yeah, very cool.
+Its initial purpose is to be a _lingua franca_ for chatbots' inter-organ communication. But I believe you can do a lot of powerful things with this baby like, processing grocery lists and, stuff. You know, it's Turing-responsive™ and all... so yeah, very cool.
 
 ![Overview](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x02.png)
 
