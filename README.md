@@ -160,7 +160,7 @@ Void elements are elements without content.
 
 ### PEGjs
 
-You can generate the parser yourself, using the syntax in [PEGjs-syntax.txt](https://github.com/botbreeder/eon-markup/blob/main/PEGjs-syntax.txt) on the [Online version of PEGjs](https://pegjs.org/online).
+You can generate the parser yourself, using the grammar in [PEGjs-syntax.txt](https://github.com/botbreeder/eon-markup/blob/main/PEGjs-syntax.txt) on the [Online version of PEGjs](https://pegjs.org/online).
 
 ### Nodejs
 
