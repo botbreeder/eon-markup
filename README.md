@@ -110,7 +110,7 @@ Commas are mandatory in objects, but they can be omitted in arrays.
 [1, 2, "3D", "foo"] ok [/]
 ```
 
-Those 2 lines above are the exact same thing: an array of 4 items, 2 numbers and 2 strings.
+Those 2 lines above are the very same thing: an element with an array of 4 items (2 numbers and 2 strings) as opening tag.
 
 ![Closing](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x10.png)
 
