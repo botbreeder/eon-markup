@@ -55,7 +55,7 @@ ArrayClosingTag
 
 
 Identifier
-= first:[^0-9 \[\{\]\}\:\,\"\/\t\r\n\\] rest:[^ \[\{\]\}\:\,\"\/\t\r\n\\]* { return first + rest.join(''); }
+= c:[^ \[\{\]\}\:\,\"\/\t\r\n\\]+ { return c.join(''); }
 
 
 
@@ -102,8 +102,8 @@ value
   / true
   / object
   / array
-  / number
   / string
+  / number
 
 false = "false" { return false; }
 null  = "null"  { return null;  }
@@ -210,7 +210,9 @@ zero
 
 string "string"
   = quotation_mark chars:char* quotation_mark { return chars.join(""); }
-  / Identifier
+  / i:Identifier {
+  	return isNaN(i) ? i : parseFloat(i);
+  }
 
 char
   = unescaped
