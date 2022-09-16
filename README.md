@@ -102,7 +102,7 @@ some {size:big}text{/size} identifier example
 
 ### Lists
 
-While commas are still mandatory in objects, they can be omitted in arrays.
+Commas are mandatory in objects, but they can be omitted in arrays.
 
 ```
 [1 2 3D foo] ok [/]
