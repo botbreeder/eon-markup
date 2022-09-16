@@ -143,7 +143,9 @@ Same goes for object tags. For a tag like `{foo:mew}`, the closing tag is `{/id}
 {foo:mew} example {/bar}
 ```
 
-The 5th example above shows that the parser ignores the shape of the closing tag anyway. Just do what makes sense.
+The 5th example above shows that the parser ignores the shape of the closing tag anyway.
+
+Just choose the shape that makes sense.
 
 ### Void
 
