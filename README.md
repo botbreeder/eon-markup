@@ -143,7 +143,7 @@ Same goes for object tags. For a tag like `{foo:mew}`, the closing tag is `{/id}
 {foo:mew} example {/bar}
 ```
 
-The 5th example above shows that you can really use _any_ identifier. Again, you're in charge, don't make poor choices.
+The 5th example above shows that the parser ignores the shape of the closing tag anyway. Just do what makes sense.
 
 ### Void
 
