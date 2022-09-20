@@ -84,10 +84,10 @@ JSON_text
 
 begin_array           = ws "[" ws
 begin_object          = ws "{" ws
-end_array             = ws "]" ws
-end_object            = ws "}" ws
-end_array_autoclose   = ws "/]" ws
-end_object_autoclose  = ws "/}" ws
+end_array             = ws "]"
+end_object            = ws "}"
+end_array_autoclose   = ws "/]"
+end_object_autoclose  = ws "/}"
 name_separator        = ws ":" ws
 value_separator       = ws "," ws
 value_separator_ornot = ws ","? ws
