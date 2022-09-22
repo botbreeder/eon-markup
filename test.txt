@@ -4,7 +4,7 @@
 [loop {start: 1, end: 10, iter: i}]
 
     [print "step " i /]
-    [if eq 0 i % 2 /]
+    [if eq 0 % i 2 /]
         [print even /]
     [else /]
         [print odd /]
