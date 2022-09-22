@@ -141,21 +141,21 @@ EONParser = /*
         peg$startRuleFunctions = { Source: peg$parseSource },
         peg$startRuleFunction  = peg$parseSource,
 
-        peg$c0 = function(c) { return { tag: "none", content: c.join('') }; },
+        peg$c0 = function(c) { return { node: "text", content: c.join('') }; },
         peg$c1 = /^[^[{\\]/,
         peg$c2 = peg$classExpectation(["[", "{", "\\"], true, false),
         peg$c3 = "\\",
         peg$c4 = peg$literalExpectation("\\", false),
         peg$c5 = peg$anyExpectation(),
         peg$c6 = function(c) { return c; },
-        peg$c7 = function(t, s) { return { tag: "object", object: t, content: s }; },
-        peg$c8 = function(t) { return { tag: "object", object: t, content: [] }; },
+        peg$c7 = function(t, s) { return { node: "object", object: t, content: s }; },
+        peg$c8 = function(t) { return { node: "object", object: t, content: [] }; },
         peg$c9 = "{/",
         peg$c10 = peg$literalExpectation("{/", false),
         peg$c11 = "}",
         peg$c12 = peg$literalExpectation("}", false),
-        peg$c13 = function(t, s) { return { tag: "array", array: t, content: s }; },
-        peg$c14 = function(t) { return { tag: "array", array: t, content: [] }; },
+        peg$c13 = function(t, s) { return { node: "array", array: t, content: s }; },
+        peg$c14 = function(t) { return { node: "array", array: t, content: [] }; },
         peg$c15 = "[/",
         peg$c16 = peg$literalExpectation("[/", false),
         peg$c17 = "]",
@@ -396,30 +396,30 @@ EONParser = /*
       var s0, s1;
 
       s0 = [];
-      s1 = peg$parseSection();
+      s1 = peg$parseNode();
       while (s1 !== peg$FAILED) {
         s0.push(s1);
-        s1 = peg$parseSection();
+        s1 = peg$parseNode();
       }
 
       return s0;
     }
 
-    function peg$parseSection() {
+    function peg$parseNode() {
       var s0;
 
-      s0 = peg$parseTextSection();
+      s0 = peg$parseTextNode();
       if (s0 === peg$FAILED) {
-        s0 = peg$parseObjectSection();
+        s0 = peg$parseObjectNode();
         if (s0 === peg$FAILED) {
-          s0 = peg$parseArraySection();
+          s0 = peg$parseArrayNode();
         }
       }
 
       return s0;
     }
 
-    function peg$parseTextSection() {
+    function peg$parseTextNode() {
       var s0, s1, s2;
 
       s0 = peg$currPos;
@@ -486,7 +486,7 @@ EONParser = /*
       return s0;
     }
 
-    function peg$parseObjectSection() {
+    function peg$parseObjectNode() {
       var s0, s1, s2, s3;
 
       s0 = peg$currPos;
@@ -585,7 +585,7 @@ EONParser = /*
       return s0;
     }
 
-    function peg$parseArraySection() {
+    function peg$parseArrayNode() {
       var s0, s1, s2, s3;
 
       s0 = peg$currPos;
