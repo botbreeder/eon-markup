@@ -1,17 +1,19 @@
 
 
+// ----- 1. EON Grammar -----
+
 Source
-= Section*
+= Node*
 
 
-Section
-= TextSection
-/ ObjectSection
-/ ArraySection
+Node
+= TextNode
+/ ObjectNode
+/ ArrayNode
 
 
-TextSection
-= c:TextChar+ { return { tag: "none", content: c.join('') }; } 
+TextNode
+= c:TextChar+ { return { node: "text", content: c.join('') }; } 
 
 
 TextChar
@@ -19,9 +21,9 @@ TextChar
 / '\\' c:. { return c; }
 
 
-ObjectSection
-= t:ObjectOpeningTag s:Source ObjectClosingTag { return { tag: "object", object: t, content: s }; }
-/ !ObjectClosingTag t:ObjectStandAloneTag { return { tag: "object", object: t, content: [] }; }
+ObjectNode
+= t:ObjectOpeningTag s:Source ObjectClosingTag { return { node: "object", object: t, content: s }; }
+/ !ObjectClosingTag t:ObjectStandAloneTag { return { node: "object", object: t, content: [] }; }
 
 
 ObjectOpeningTag
@@ -36,9 +38,9 @@ ObjectClosingTag
 = '{/' Identifier? '}'
 
 
-ArraySection
-= t:ArrayOpeningTag s:Source ArrayClosingTag { return { tag: "array", array: t, content: s }; }
-/ !ArrayClosingTag t:ArrayStandAloneTag { return { tag: "array", array: t, content: [] }; }
+ArrayNode
+= t:ArrayOpeningTag s:Source ArrayClosingTag { return { node: "array", array: t, content: s }; }
+/ !ArrayClosingTag t:ArrayStandAloneTag { return { node: "array", array: t, content: [] }; }
 
 
 
@@ -58,25 +60,6 @@ Identifier
 = c:[^ \[\{\]\}\:\,\"\/\t\r\n\\]+ { return c.join(''); }
 
 
-
-
-// https://github.com/pegjs/pegjs/blob/master/examples/json.pegjs
-//
-// JSON Grammar
-// ============
-//
-// Based on the grammar from RFC 7159 [1].
-//
-// Note that JSON is also specified in ECMA-262 [2], ECMA-404 [3], and on the
-// JSON website [4] (somewhat informally). The RFC seems the most authoritative
-// source, which is confirmed e.g. by [5].
-//
-// [1] http://tools.ietf.org/html/rfc7159
-// [2] http://www.ecma-international.org/publications/standards/Ecma-262.htm
-// [3] http://www.ecma-international.org/publications/standards/Ecma-404.htm
-// [4] http://json.org/
-// [5] https://www.tbray.org/ongoing/When/201x/2014/03/05/RFC7159-JSON
-
 // ----- 2. JSON Grammar -----
 
 JSON_text
@@ -94,6 +77,7 @@ value_separator_ornot = ws ","? ws
 
 ws "whitespace" = [ \t\n\r]*
 
+
 // ----- 3. Values -----
 
 value
@@ -108,6 +92,7 @@ value
 false = "false" { return false; }
 null  = "null"  { return null;  }
 true  = "true"  { return true;  }
+
 
 // ----- 4. Objects -----
 
@@ -152,6 +137,7 @@ member
       return { name: name, value: value };
     }
 
+
 // ----- 5. Arrays -----
 
 array
@@ -173,6 +159,7 @@ array_autoclose
     )?
     end_array_autoclose
     { return values !== null ? values : []; }
+
 
 // ----- 6. Numbers -----
 
@@ -205,6 +192,7 @@ plus
 
 zero
   = "0"
+
 
 // ----- 7. Strings -----
 
@@ -241,8 +229,8 @@ quotation_mark
 unescaped
   = [^\0-\x1F\x22\x5C]
 
+
 // ----- Core ABNF Rules -----
 
-// See RFC 4234, Appendix B (http://tools.ietf.org/html/rfc4234).
 DIGIT  = [0-9]
 HEXDIG = [0-9a-f]i
