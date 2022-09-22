@@ -11,7 +11,7 @@ _Are we running in circles? yeah_
 EON-Markup is a markup language you can use to annotate text with data. Here is how it looks like.
 
 ```
-this is a [tagged]Hello World[/tagged] example
+this is a [tagged]Hello World {size:2}example{/size}[/tagged]
 ```
 
 And here is the JSON representation of this example, as returned by the reference parser you can download from this repo.
@@ -20,24 +20,32 @@ And here is the JSON representation of this example, as returned by the referenc
 
 [
    {
-      "tag": "none",
+      "node": "text",
       "content": "this is a "
    },
    {
-      "tag": "array",
+      "node": "array",
       "array": [
          "tagged"
       ],
       "content": [
          {
-            "tag": "none",
-            "content": "Hello World"
+            "node": "text",
+            "content": "Hello World "
+         },
+         {
+            "node": "object",
+            "object": {
+               "size": 2
+            },
+            "content": [
+               {
+                  "node": "text",
+                  "content": "example"
+               }
+            ]
          }
       ]
-   },
-   {
-      "tag": "none",
-      "content": " example"
    }
 ]
 
@@ -46,17 +54,17 @@ And here is the JSON representation of this example, as returned by the referenc
 The same could be written like this:
 
 ```
-this is a [tagged]Hello World[/] example
+this is a [tagged]Hello World {size:2}example{/}[/]
 ```
 
 ... or like this:
 
 
 ```
-this is a ["tagged"]Hello World[/] example
+this is a ["tagged"]Hello World {"size":2}example{/}[/]
 ```
 
-In this version, the opening tag is a legal JSON array.
+In this last version, the opening tags are legal JSON.
 
 ![Overview](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x01.png)
 
