@@ -11,7 +11,7 @@ _Are we running in circles? yeah_
 EON-Markup is a markup language you can use to annotate text with data. Here is how it looks like.
 
 ```
-this is a [tagged]Hello World {size:2}example{/size}[/tagged]
+this is a [tagged] Hello World {size:2}example{/size} [/tagged]
 ```
 
 And here is the JSON representation of this example, as returned by the reference parser you can download from this repo.
@@ -31,7 +31,7 @@ And here is the JSON representation of this example, as returned by the referenc
       "content": [
          {
             "node": "text",
-            "content": "Hello World "
+            "content": " Hello World "
          },
          {
             "node": "object",
@@ -44,6 +44,10 @@ And here is the JSON representation of this example, as returned by the referenc
                   "content": "example"
                }
             ]
+         },
+         {
+            "node": "text",
+            "content": " "
          }
       ]
    }
@@ -54,14 +58,14 @@ And here is the JSON representation of this example, as returned by the referenc
 The same could be written like this:
 
 ```
-this is a [tagged]Hello World {size:2}example{/}[/]
+this is a [tagged] Hello World {size:2}example{/} [/]
 ```
 
 ... or like this:
 
 
 ```
-this is a ["tagged"]Hello World {"size":2}example{/}[/]
+this is a ["tagged"] Hello World {"size":2}example{/} [/]
 ```
 
 In this last version, the opening tags are legal JSON.
