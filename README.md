@@ -164,7 +164,8 @@ Just choose the shape that makes sense. As usual, pick a style and stick to it.
 Void elements are elements without content.
 
 - `[an empty element/]` is syntactic sugar for `[an empty element][/]`.
-- `[/]` will never be interpreted as a void element, it is always interpreted as a closing tag.
+- `{element:empty/}` is syntactic sugar for `{element:empty}{/}`.
+- `[/]` and `{/}` will never be interpreted as void elements, they are always interpreted as closing tags.
 
 ![Usage](https://github.com/botbreeder/eon-markup/raw/main/img/Sector0x11.png)
 
