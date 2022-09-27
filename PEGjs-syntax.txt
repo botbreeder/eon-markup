@@ -13,7 +13,7 @@ Node
 
 
 TextNode
-= c:TextChar+ { return { node: "text", content: c.join('') }; } 
+= c:TextChar+ { return { node: "text", text: c.join('') }; } 
 
 
 TextChar
