@@ -233,6 +233,10 @@ You can use a backslash `\` to escape any character, like `{`, `[`, or `\`.
 | \\[              | [      |
 | \\\\              | \      |
 
+### _What is PEGjs-syntax-flat?_
+
+It is an alternative to the reference parser. This one gives a flat representation of the data, where nodes are refered to by IDs.
+
 ### _Why's this question unanswered?_
 
 ```
