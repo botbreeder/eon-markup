@@ -21,7 +21,7 @@ And here is the JSON representation of this example, as returned by the referenc
 [
    {
       "node": "text",
-      "content": "this is a "
+      "text": "this is a "
    },
    {
       "node": "array",
@@ -31,7 +31,7 @@ And here is the JSON representation of this example, as returned by the referenc
       "content": [
          {
             "node": "text",
-            "content": " Hello World "
+            "text": " Hello World "
          },
          {
             "node": "object",
@@ -41,13 +41,13 @@ And here is the JSON representation of this example, as returned by the referenc
             "content": [
                {
                   "node": "text",
-                  "content": "example"
+                  "text": "example"
                }
             ]
          },
          {
             "node": "text",
-            "content": " "
+            "text": " "
          }
       ]
    }
