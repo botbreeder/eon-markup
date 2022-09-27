@@ -141,7 +141,7 @@ module.exports = /*
         peg$startRuleFunctions = { Source: peg$parseSource },
         peg$startRuleFunction  = peg$parseSource,
 
-        peg$c0 = function(c) { return { node: "text", content: c.join('') }; },
+        peg$c0 = function(c) { return { node: "text", text: c.join('') }; },
         peg$c1 = /^[^[{\\]/,
         peg$c2 = peg$classExpectation(["[", "{", "\\"], true, false),
         peg$c3 = "\\",
