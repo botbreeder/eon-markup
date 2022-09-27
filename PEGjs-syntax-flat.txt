@@ -1,12 +1,12 @@
 // ----- 0. Builder -----
 
-{ let EONParsed = { nodes: {}, id: 0 }; }
+{ let EONParsedNodes = []; }
 
 
 // ----- 1. EON Grammar -----
 
 Start
-= Node* { return EONParsed.nodes; }
+= Node* { return EONParsedNodes; }
 
 
 Source
@@ -21,9 +21,8 @@ Node
 
 TextNode
 = c:TextChar+ {
-	let id = EONParsed.id++;
-    EONParsed.nodes[id] = { node: "text", text: c.join('') };
-    return id;
+    EONParsedNodes.push({ node: "text", text: c.join('') });
+    return EONParsedNodes.length-1;
 } 
 
 
@@ -34,14 +33,12 @@ TextChar
 
 ObjectNode
 = t:ObjectOpeningTag s:Source ObjectClosingTag {
-	let id = EONParsed.id++;
-    EONParsed.nodes[id] = { node: "object", object: t, content: s };
-    return id;
+    EONParsedNodes.push({ node: "object", object: t, content: s });
+    return EONParsedNodes.length-1;
 }
 / !ObjectClosingTag t:ObjectStandAloneTag {
-	let id = EONParsed.id++;
-    EONParsed.nodes[id] = { node: "object", object: t, content: [] };
-    return id;
+    EONParsedNodes.push({ node: "object", object: t, content: [] });
+    return EONParsedNodes.length-1;
 }
 
 
@@ -59,14 +56,12 @@ ObjectClosingTag
 
 ArrayNode
 = t:ArrayOpeningTag s:Source ArrayClosingTag {
-	let id = EONParsed.id++;
-    EONParsed.nodes[id] = { node: "array", array: t, content: s };
-    return id;
+    EONParsedNodes.push({ node: "array", array: t, content: s });
+    return EONParsedNodes.length-1;
 }
 / !ArrayClosingTag t:ArrayStandAloneTag {
-	let id = EONParsed.id++;
-    EONParsed.nodes[id] = { node: "array", array: t, content: [] };
-    return id;
+    EONParsedNodes.push({ node: "array", array: t, content: [] });
+    return EONParsedNodes.length-1;
 }
 
 
