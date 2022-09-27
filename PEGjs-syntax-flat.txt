@@ -1,0 +1,263 @@
+// ----- 0. Builder -----
+
+{ let EONParsed = { nodes: {}, id: 0 }; }
+
+
+// ----- 1. EON Grammar -----
+
+Start
+= Node* { return EONParsed.nodes; }
+
+
+Source
+= Node*
+
+
+Node
+= TextNode
+/ ObjectNode
+/ ArrayNode
+
+
+TextNode
+= c:TextChar+ {
+	let id = EONParsed.id++;
+    EONParsed.nodes[id] = { node: "text", text: c.join('') };
+    return id;
+} 
+
+
+TextChar
+= [^\[\{\\]
+/ '\\' c:. { return c; }
+
+
+ObjectNode
+= t:ObjectOpeningTag s:Source ObjectClosingTag {
+	let id = EONParsed.id++;
+    EONParsed.nodes[id] = { node: "object", object: t, content: s };
+    return id;
+}
+/ !ObjectClosingTag t:ObjectStandAloneTag {
+	let id = EONParsed.id++;
+    EONParsed.nodes[id] = { node: "object", object: t, content: [] };
+    return id;
+}
+
+
+ObjectOpeningTag
+= object
+
+
+ObjectStandAloneTag
+= object_autoclose
+
+
+ObjectClosingTag
+= '{/' Identifier? '}'
+
+
+ArrayNode
+= t:ArrayOpeningTag s:Source ArrayClosingTag {
+	let id = EONParsed.id++;
+    EONParsed.nodes[id] = { node: "array", array: t, content: s };
+    return id;
+}
+/ !ArrayClosingTag t:ArrayStandAloneTag {
+	let id = EONParsed.id++;
+    EONParsed.nodes[id] = { node: "array", array: t, content: [] };
+    return id;
+}
+
+
+
+ArrayOpeningTag
+= array
+
+
+ArrayStandAloneTag
+= array_autoclose
+
+
+ArrayClosingTag
+= '[/' Identifier? ']'
+
+
+Identifier
+= c:[^ \[\{\]\}\:\,\"\/\t\r\n\\]+ { return c.join(''); }
+
+
+// ----- 2. JSON Grammar -----
+
+JSON_text
+  = ws value:value ws { return value; }
+
+begin_array           = ws "[" ws
+begin_object          = ws "{" ws
+end_array             = ws "]"
+end_object            = ws "}"
+end_array_autoclose   = ws "/]"
+end_object_autoclose  = ws "/}"
+name_separator        = ws ":" ws
+value_separator       = ws "," ws
+value_separator_ornot = ws ","? ws
+
+ws "whitespace" = [ \t\n\r]*
+
+
+// ----- 3. Values -----
+
+value
+  = false
+  / null
+  / true
+  / object
+  / array
+  / string
+  / number
+
+false = "false" { return false; }
+null  = "null"  { return null;  }
+true  = "true"  { return true;  }
+
+
+// ----- 4. Objects -----
+
+object
+  = begin_object
+    members:(
+      head:member
+      tail:(value_separator m:member { return m; })*
+      {
+        var result = {};
+
+        [head].concat(tail).forEach(function(element) {
+          result[element.name] = element.value;
+        });
+
+        return result;
+      }
+    )?
+    end_object
+    { return members !== null ? members: {}; }
+
+object_autoclose
+  = begin_object
+    members:(
+      head:member
+      tail:(value_separator m:member { return m; })*
+      {
+        var result = {};
+
+        [head].concat(tail).forEach(function(element) {
+          result[element.name] = element.value;
+        });
+
+        return result;
+      }
+    )?
+    end_object_autoclose
+    { return members !== null ? members: {}; }
+
+member
+  = name:string name_separator value:value {
+      return { name: name, value: value };
+    }
+
+
+// ----- 5. Arrays -----
+
+array
+  = begin_array
+    values:(
+      head:value
+      tail:(value_separator_ornot v:value { return v; })*
+      { return [head].concat(tail); }
+    )?
+    end_array
+    { return values !== null ? values : []; }
+
+array_autoclose
+  = begin_array
+    values:(
+      head:value
+      tail:(value_separator_ornot v:value { return v; })*
+      { return [head].concat(tail); }
+    )?
+    end_array_autoclose
+    { return values !== null ? values : []; }
+
+
+// ----- 6. Numbers -----
+
+number "number"
+  = minus? int frac? exp? { return parseFloat(text()); }
+
+decimal_point
+  = "."
+
+digit1_9
+  = [1-9]
+
+e
+  = [eE]
+
+exp
+  = e (minus / plus)? DIGIT+
+
+frac
+  = decimal_point DIGIT+
+
+int
+  = zero / (digit1_9 DIGIT*)
+
+minus
+  = "-"
+
+plus
+  = "+"
+
+zero
+  = "0"
+
+
+// ----- 7. Strings -----
+
+string "string"
+  = quotation_mark chars:char* quotation_mark { return chars.join(""); }
+  / i:Identifier {
+  	return isNaN(i) ? i : parseFloat(i);
+  }
+
+char
+  = unescaped
+  / escape
+    sequence:(
+        '"'
+      / "\\"
+      / "/"
+      / "b" { return "\b"; }
+      / "f" { return "\f"; }
+      / "n" { return "\n"; }
+      / "r" { return "\r"; }
+      / "t" { return "\t"; }
+      / "u" digits:$(HEXDIG HEXDIG HEXDIG HEXDIG) {
+          return String.fromCharCode(parseInt(digits, 16));
+        }
+    )
+    { return sequence; }
+
+escape
+  = "\\"
+
+quotation_mark
+  = '"'
+
+unescaped
+  = [^\0-\x1F\x22\x5C]
+
+
+// ----- Core ABNF Rules -----
+
+DIGIT  = [0-9]
+HEXDIG = [0-9a-f]i
